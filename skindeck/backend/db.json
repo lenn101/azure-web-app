@@ -1,0 +1,250 @@
+{
+  "users": [
+    {
+      "email": "admin@admin.ch",
+      "password": "$2a$10$TGA6jzwlv0EXemTD2xD8We4iApD6ccP/fEZYTyO0AkRxk3p5evmA6",
+      "username": "admin",
+      "vbucks": 4900,
+      "profilePicture": "jim.png",
+      "id": 1
+    },
+    {
+      "email": "kvnsabato@gmail.co",
+      "password": "$2a$10$qQWhJuAm7qWUwBcy8tpBnu0514WsIdnHrWFnJCvHRCsKJo.oflaqK",
+      "username": "123",
+      "vbucks": 0,
+      "profilePicture": "noskin.png",
+      "id": 2
+    },
+    {
+      "email": "ahmeddaas@gmx.de",
+      "password": "$2a$10$WMKOmJIhdUMXN0F9QF2c.Ouu29zh.cs42VDSNWWKd/zcDJPD98afy",
+      "username": "4hmed",
+      "vbucks": 6560533,
+      "profilePicture": "black_knight.png",
+      "id": 3
+    }
+  ],
+  "skins": [
+    {
+      "id": 1,
+      "name": "Tung Tung Tung Sahur",
+      "price": 6700,
+      "rarity": "LEGENDARY",
+      "image": "tungtung.png",
+      "description": "Released during the 2024 Ramadan Special Event. This legendary warrior uses his rhythmic drum beats to wake up the entire island. He never sleeps, and neither will his enemies."
+    },
+    {
+      "id": 2,
+      "name": "Ballerina Cappucina",
+      "price": 6767,
+      "rarity": "LEGENDARY",
+      "image": "ballerina.png",
+      "description": "Released in Chapter 5, Season 2. Graceful as a swan but energized by pure espresso. She dances through the storm with a high-caffeine fighting style that leaves opponents dizzy."
+    },
+    {
+      "id": 3,
+      "name": "Renegade Raider",
+      "price": 1200,
+      "rarity": "RARE",
+      "image": "renegade_raider.png",
+      "description": "Released in Season 1. A rare relic from the very beginning of the island. Only the most seasoned veterans who reached Level 20 in the first season own this wasteland scavenger."
+    },
+    {
+      "id": 4,
+      "name": "Skull Trooper",
+      "price": 1500,
+      "rarity": "EPIC",
+      "image": "skull_trooper.png",
+      "description": "Released during the Fortnitemares 2017 event. He is the original face of Halloween on the island. A terrifying skeleton soldier that strikes fear into the hearts of bush-campers."
+    },
+    {
+      "id": 5,
+      "name": "Black Knight",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "black_knight.png",
+      "description": "The Tier 70 reward from the Season 2 Battle Pass. The odious scourge of Wailing Woods. He stands as a symbol of the first true champions of the Battle Royale."
+    },
+    {
+      "id": 6,
+      "name": "Dark Voyager",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "dark_voyager.png",
+      "description": "Released in the Season 3 Battle Pass. Hailing from the vast darkness of deep space, this astronaut is designed to explore the unknown reaches of the galaxy—and the island."
+    },
+    {
+      "id": 7,
+      "name": "The Reaper",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "the_reaper.png",
+      "description": "The Tier 100 reward from Season 3. A man of focus, commitment, and sheer will. Often whispered to be a legendary hitman who once took out a squad with nothing but a pencil."
+    },
+    {
+      "id": 8,
+      "name": "Jim Gyattillaz",
+      "price": -67,
+      "rarity": "COMMON",
+      "image": "jim.png",
+      "description": "Released in the Meme-Update 2025. Legend says he was kicked out of every band for being too 'extra'. His price is negative because the developers actually want him gone."
+    },
+    {
+      "id": 9,
+      "name": "Drift",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "drift.png",
+      "description": "Released in the Season 5 Battle Pass. An ordinary traveler from the real world who was sucked into a Rift. Over time, he mastered Kitsune magic to become a powerful interdimensional warrior."
+    },
+    {
+      "id": 10,
+      "name": "Ragnarok",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "ragnarok.png",
+      "description": "The Tier 100 reward from Season 5. The harbinger of fate and the end of the world. As he gains power, he transforms from a simple Viking into a frost-breathing god of destruction."
+    },
+    {
+      "id": 11,
+      "name": "Calamity",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "calamity.png",
+      "description": "Released in the Season 6 Battle Pass. Once a simple ranch hand, she became a legendary monster hunter when the darkness of the 'Cube' began to infect her home."
+    },
+    {
+      "id": 12,
+      "name": "Dire",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "dire.png",
+      "description": "The Tier 100 reward from Season 6. By day, a normal human, but under the full moon—or during a firefight—he transforms into a fierce werewolf. Leader of the pack."
+    },
+    {
+      "id": 13,
+      "name": "Ice King",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "ice_king.png",
+      "description": "The Tier 100 reward from Season 7. The absolute ruler of Polar Peak. He brought the eternal winter to the island and keeps his kingdom frozen in time with dark ice magic."
+    },
+    {
+      "id": 14,
+      "name": "Luxe",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "luxe.png",
+      "description": "The Tier 100 reward from Season 8. A treasure hunter who believes that if you're going to win, you might as well look expensive. She's here for the gold and the glory."
+    },
+    {
+      "id": 15,
+      "name": "Vendetta",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "vendetta.png",
+      "description": "The Tier 100 reward from Season 9. A cybernetic warrior from the future, fueled by a desire for revenge. He uses advanced technology to track his targets across Neo-Tilted."
+    },
+    {
+      "id": 16,
+      "name": "Ultima Knight",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "ultima_knight.png",
+      "description": "The Tier 100 reward from Season X. The final evolution of the knightly order. He arrived to witness the end of the original island and served as its ultimate protector."
+    },
+    {
+      "id": 17,
+      "name": "Brite Bomber",
+      "price": 1200,
+      "rarity": "RARE",
+      "image": "brite_bomber.png",
+      "description": "Released in Season 2. The sunshine of the battlefield. Don't let the rainbows and unicorns fool you; she's been a fan favorite for years because she knows how to handle a rocket launcher."
+    },
+    {
+      "id": 18,
+      "name": "Red Knight",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "red_knight.png",
+      "description": "Released in Season 2. The menacing partner to the Black Knight. A master of close-quarters combat who wandered out of Anarchy Acres looking for a worthy challenger."
+    },
+    {
+      "id": 19,
+      "name": "Wildcard",
+      "price": 2000,
+      "rarity": "LEGENDARY",
+      "image": "wildcard.png",
+      "description": "Released during the 'High Stakes' event in Season 5. An expert jewel thief who always has an ace up his sleeve. Part of a crew that specializes in breaking into the island's most secure vaults."
+    },
+    {
+      "id": 20,
+      "name": "Fishstick",
+      "price": 1200,
+      "rarity": "RARE",
+      "image": "fishstick.png",
+      "description": "Released in Season 7. Out of water but definitely not out of his league. This clumsy yet lovable fish soldier became an instant icon and has since traveled through time and space."
+    }
+  ],
+  "locker": [
+    {
+      "userId": 1,
+      "skinId": 2,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "skinId": 11,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "skinId": 8,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "skinId": 6,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "skinId": 5,
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "skinId": 16,
+      "id": 6
+    },
+    {
+      "userId": 3,
+      "skinId": 4,
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "skinId": 3,
+      "id": 8
+    }
+  ],
+  "shop": [
+    {
+      "id": 1,
+      "skinId": 4
+    },
+    {
+      "id": 2,
+      "skinId": 5
+    },
+    {
+      "id": 3,
+      "skinId": 3
+    },
+    {
+      "id": 4,
+      "skinId": 16
+    }
+  ]
+}

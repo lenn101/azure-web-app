@@ -1,0 +1,44 @@
+.freevbucks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1rem auto;
+    gap: 2px;
+    padding: 0.6rem 1.5rem;
+    background: rgba(20, 25, 60, 0.7);
+    border: 1px solid rgba(120, 140, 200, 0.4);
+    border-radius: 999px;
+    width: fit-content;
+    backdrop-filter: blur(8px);
+    font-family: inherit;
+}
+
+.text {
+    color: #c8d0e8;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.timer {
+    color: white;
+    font-weight: 700;
+    margin-left: 0.4rem;
+}
+
+.collectButton {
+    background: none;
+    border: none;
+    color: #ffd700;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+}
+
+.collectButton:hover {
+    color: #fff3a0;
+}

@@ -1,0 +1,14 @@
+.delete {
+    all: unset;
+    background: rgba(215, 43, 43, 0.746);
+    padding: 0.75em;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.delete:hover {
+    background: rgba(144, 34, 34, 0.746);
+}

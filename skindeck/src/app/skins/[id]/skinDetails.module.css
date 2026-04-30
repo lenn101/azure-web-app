@@ -1,0 +1,242 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.shopWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    width: 100%;
+    background: rgb(57, 57, 127);
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.imageSection {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+
+.mainImage {
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
+}
+
+.infoSection {
+    flex: 1;
+    min-width: 350px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(57, 57, 127);
+}
+
+.name {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Burbank", "Arial Black", sans-serif;
+    margin: 0.5rem 0;
+    line-height: 0.9;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem 0.35rem 1rem;
+    margin-bottom: 1em;
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.badge.legendary { background: rgb(255, 166, 0); }
+.badge.epic { background: rgb(204, 0, 255); }
+.badge.rare { background: rgb(0, 179, 255); }
+.badge.common { background: rgb(153, 255, 0); }
+
+.priceTag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 1.5rem 0;
+}
+
+.description {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.ownedText {
+    margin-top: 1rem;
+    color: #666;
+    font-size: 1.5rem;
+}
+
+.ownedText.Owned {
+    color: #7bff00;
+}
+
+.return {
+    all: unset;
+    cursor: pointer;
+    background: rgba(229, 229, 229, 0.648);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-size: 2em;
+    position: relative;
+    left: 10.5em;
+    top: 1.5em;
+}
+
+.return:hover {
+    background: rgba(255, 255, 255, 0.648);
+}
+
+.legendary { border-color: rgb(255, 166, 0); }
+.epic { border-color: rgb(204, 0, 255); }
+.rare { border-color: rgb(0, 179, 255); }
+.common { border-color: rgb(153, 255, 0); }
+
+/* Mobile: Stack */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .shopWrapper {
+        flex-direction: column;
+    }
+
+    .imageSection {
+        min-width: 0;
+        width: 100%;
+        padding: 1.5rem;
+        min-height: 260px;
+    }
+
+    .mainImage {
+        width: auto !important;
+        max-width: 100%;
+        max-height: 260px;
+        height: auto;
+    }
+
+    .infoSection {
+        min-width: 0;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .priceTag {
+        font-size: 1.6rem;
+        margin: 1rem 0;
+    }
+
+    .description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    .ownedText {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .return {
+        font-size: 1.4em;
+        position: static;
+        left: auto;
+        top: auto;
+        text-align: center;
+    }
+}
+
+/* Kleine Mobilgeräte */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .shopWrapper {
+        border-radius: 14px;
+        border-width: 3px;
+    }
+
+    .imageSection {
+        padding: 1rem;
+        min-height: 220px;
+    }
+
+    .mainImage {
+        max-height: 220px;
+    }
+
+    .infoSection {
+        padding: 1.2rem;
+    }
+
+    .badge {
+        font-size: 0.8rem;
+        margin-bottom: 0.7em;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .priceTag {
+        font-size: 1.3rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .return {
+        font-size: 1.2em;
+    }
+}

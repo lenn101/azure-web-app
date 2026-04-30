@@ -1,0 +1,46 @@
+.skins {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 30rem));
+    gap: 1.5rem;
+    margin: 3rem auto;
+    justify-content: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+/* Tablet: 2 Spalten, aber schmaler */
+@media (max-width: 1042px) {
+    .skins {
+        grid-template-columns: repeat(2, minmax(0, 26rem));
+        gap: 1.25rem;
+    }
+}
+
+/* Kleines Tablet: 1 Spalte */
+@media (max-width: 810px) {
+    .skins {
+        grid-template-columns: 1fr;
+        margin: 2rem auto;
+        justify-items: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .skins {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 2rem 0.5rem;
+        padding: 0 0.5rem;
+        justify-items: center;
+    }
+}
+
+/* Kleine Mobilgeräte */
+@media (max-width: 480px) {
+    .skins {
+        gap: 0.8rem;
+        margin: 1.5rem 0.3rem;
+        padding: 0 0.3rem;
+    }
+}

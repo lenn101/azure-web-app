@@ -1,0 +1,449 @@
+.blackjack {
+    background:
+        radial-gradient(ellipse at center, rgb(22, 101, 52) 0%, rgb(12, 60, 30) 70%, rgb(8, 40, 20) 100%);
+    margin: 1em auto;
+    max-width: 1200px;
+    border-radius: 1em;
+    border: 6px solid rgb(60, 35, 15);
+    box-shadow:
+        0 0 0 3px rgb(180, 140, 60),
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        inset 0 0 120px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 2em);
+    max-height: 900px;
+}
+
+.blackjack::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0 2px, transparent 2px 6px);
+    pointer-events: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8em 1.5em;
+    border-bottom: 1px solid rgba(255, 215, 100, 0.2);
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: 2em;
+    letter-spacing: 0.3em;
+    color: rgb(255, 215, 100);
+    text-shadow:
+        0 0 10px rgba(255, 215, 100, 0.6),
+        0 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    margin: 0;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 100, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8); }
+    50% { text-shadow: 0 0 25px rgba(255, 215, 100, 0.9), 0 2px 4px rgba(0, 0, 0, 0.8); }
+}
+
+.balance {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    border: 2px solid rgb(180, 140, 60);
+}
+
+.profileImage {
+    border-radius: 50%;
+    border: 3px solid rgb(255, 215, 100);
+    box-shadow: 0 0 10px rgba(255, 215, 100, 0.4);
+}
+
+.balanceInfo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.balanceLabel {
+    font-size: 0.7em;
+    letter-spacing: 0.15em;
+    color: rgb(180, 140, 60);
+}
+
+.balanceValue {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: rgb(255, 215, 100);
+    text-shadow: 0 0 8px rgba(255, 215, 100, 0.5);
+}
+
+.bank,
+.player {
+    flex: 1;
+    margin: 0.6em 1.5em;
+    border-radius: 0.75em;
+    padding: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+    border: 2px dashed rgba(255, 215, 100, 0.25);
+    min-height: 0;
+}
+
+.bank::before,
+.player::before {
+    content: attr(data-label);
+    position: absolute;
+    top: -0.7em;
+    left: 1.5em;
+    background: rgb(60, 35, 15);
+    color: rgb(255, 215, 100);
+    padding: 0.15em 0.8em;
+    border-radius: 0.3em;
+    font-size: 0.75em;
+    letter-spacing: 0.2em;
+    border: 1px solid rgb(180, 140, 60);
+    z-index: 2;
+}
+
+.playerCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: clamp(60px, 12vw, 130px) !important;
+    height: auto !important;
+    margin: 0.3em;
+    border-radius: 0.5em;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        0 0 0 2px rgba(255, 255, 255, 0.1);
+    animation: dealCard 0.6s cubic-bezier(0.22, 1.2, 0.36, 1) backwards;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) rotate(-2deg) scale(1.03);
+}
+
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(4) { animation-delay: 0.6s; }
+.card:nth-child(5) { animation-delay: 0.8s; }
+.card:nth-child(6) { animation-delay: 1.0s; }
+.card:nth-child(7) { animation-delay: 1.2s; }
+.card:nth-child(8) { animation-delay: 1.4s; }
+
+@keyframes dealCard {
+    0% {
+        opacity: 0;
+        transform: translate(-500px, -400px) rotate(-60deg) scale(0.5);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(10px, 10px) rotate(4deg) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0) scale(1);
+    }
+}
+
+.handValue {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: rgb(255, 215, 100);
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.3em 0.7em;
+    border-radius: 0.4em;
+    border: 2px solid rgb(180, 140, 60);
+    min-width: 2em;
+    text-align: center;
+}
+
+.controls {
+    padding: 0.8em 1.5em 1.2em;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.messageBox {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    animation: messagePop 0.5s cubic-bezier(0.22, 1.4, 0.36, 1) backwards;
+}
+
+.message {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    margin: 0;
+    color: rgb(255, 215, 100);
+    text-shadow: 0 0 15px rgba(255, 215, 100, 0.8), 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.winAmount {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(80, 255, 120);
+    text-shadow: 0 0 15px rgba(80, 255, 120, 0.8);
+}
+
+.lossAmount {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(255, 90, 90);
+    text-shadow: 0 0 15px rgba(255, 90, 90, 0.6);
+}
+
+@keyframes messagePop {
+    0% { opacity: 0; transform: scale(0.3); }
+    60% { opacity: 1; transform: scale(1.15); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.betRow,
+.actionRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+    flex-wrap: wrap;
+}
+
+.betInput {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.betLabel {
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
+    color: rgb(180, 140, 60);
+    margin-bottom: 0.2em;
+}
+
+.input {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(180, 140, 60);
+    color: rgb(255, 215, 100);
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0.4em 0.6em;
+    border-radius: 0.4em;
+    width: 6em;
+    text-align: center;
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input:focus {
+    border-color: rgb(255, 215, 100);
+    box-shadow: 0 0 10px rgba(255, 215, 100, 0.5);
+}
+
+.betQuick {
+    display: flex;
+    gap: 0.4em;
+}
+
+.chipButton {
+    all: unset;
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgb(220, 60, 60), rgb(140, 20, 20));
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+    border: 3px dashed rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 0 0 2px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chipButton:hover {
+    transform: translateY(-3px) rotate(10deg);
+}
+
+.chipButton:nth-child(2) {
+    background: radial-gradient(circle at 30% 30%, rgb(60, 120, 220), rgb(20, 50, 140));
+}
+
+.chipButton:nth-child(3) {
+    background: radial-gradient(circle at 30% 30%, rgb(80, 80, 80), rgb(20, 20, 20));
+}
+
+.button {
+    all: unset;
+    background: linear-gradient(180deg, rgb(220, 170, 60) 0%, rgb(180, 130, 30) 100%);
+    color: rgb(40, 20, 5);
+    padding: 0.6em 1.2em;
+    min-width: 5em;
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-align: center;
+    border-radius: 0.5em;
+    cursor: pointer;
+    border: 2px solid rgb(255, 215, 100);
+    box-shadow:
+        0 5px 0 rgb(120, 85, 15),
+        0 7px 15px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: all 0.15s ease;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.button:hover {
+    background: linear-gradient(180deg, rgb(240, 190, 80) 0%, rgb(200, 150, 40) 100%);
+    transform: translateY(-2px);
+    box-shadow:
+        0 7px 0 rgb(120, 85, 15),
+        0 10px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.button:active {
+    transform: translateY(3px);
+    box-shadow:
+        0 2px 0 rgb(120, 85, 15),
+        0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .blackjack {
+        margin: 0;
+        border-radius: 0;
+        border-width: 3px;
+        height: 100vh;
+        max-height: none;
+    }
+
+    .header {
+        padding: 0.5em 0.8em;
+    }
+
+    .title {
+        font-size: 1.3em;
+        letter-spacing: 0.2em;
+    }
+
+    .balance {
+        padding: 0.3em 0.7em;
+        gap: 0.5em;
+    }
+
+    .balanceValue {
+        font-size: 1.1em;
+    }
+
+    .profileImage {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .bank,
+    .player {
+        margin: 0.5em 0.8em;
+        padding: 0.5em;
+    }
+
+    .card {
+        width: clamp(45px, 18vw, 90px) !important;
+        margin: 0.15em;
+    }
+
+    .handValue {
+        right: 0.4em;
+        font-size: 1em;
+        padding: 0.2em 0.5em;
+    }
+
+    .controls {
+        padding: 0.5em 0.8em 0.8em;
+    }
+
+    .message,
+    .winAmount,
+    .lossAmount {
+        font-size: 1.1em;
+    }
+
+    .betRow,
+    .actionRow {
+        gap: 0.5em;
+    }
+
+    .input {
+        width: 4.5em;
+        font-size: 1.1em;
+    }
+
+    .chipButton {
+        width: 2.3em;
+        height: 2.3em;
+        font-size: 0.75em;
+    }
+
+    .button {
+        font-size: 1.1em;
+        padding: 0.5em 1em;
+        min-width: 4em;
+    }
+
+    .betQuick {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.1em;
+    }
+
+    .bank::before,
+    .player::before {
+        font-size: 0.65em;
+        left: 0.8em;
+    }
+}

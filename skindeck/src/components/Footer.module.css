@@ -1,0 +1,82 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    background: rgba(63, 63, 139, 0.834);
+    border-top: 0.8em solid rgb(181, 181, 246);
+    padding: 2em;
+    gap: 1em;
+}
+
+.business {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.business h1 {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.business a {
+    all: unset;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+.business a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.business a:hover::after {
+    width: 100%;
+}
+
+.aboutUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8em;
+}
+
+.aboutUs h1 {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.aboutUs p {
+    color: white;
+}
+
+.iFrame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iFrame iframe {
+    border-radius: 8px;
+}
+
+@media (max-width: 800px){
+    .container{
+        display: block;
+        
+    }
+    .business, .aboutUs, .iFrame{
+        margin-bottom: 3em;
+    }
+}

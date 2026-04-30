@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Burbank";
+  src: url("/fonts/BurbankBigCondensed_bold.otf") format("opentype");
+  font-weight: 900;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Burbank", sans-serif;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative; 
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body:has(.not-found-page) footer {
+  display: none;
+}

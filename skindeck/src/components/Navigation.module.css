@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "Burbank";
+    src: url("/fonts/BurbankBigCondensed_bold.otf") format("opentype");
+    font-weight: 900;
+    font-display: swap;
+}
+
+.nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    font-family: "Burbank", sans-serif;
+    text-decoration: none;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    margin: 1em 0 0.7em 0;
+    position: relative;
+    padding-bottom: 4px;
+    user-select: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.list {
+    display: flex;
+    gap: 3em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+/* Burger Button */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.2em;
+    height: 1.6em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.burgerOpen span:nth-child(1) {
+    transform: translateY(0.65em) rotate(45deg);
+}
+
+.burgerOpen span:nth-child(2) {
+    opacity: 0;
+}
+
+.burgerOpen span:nth-child(3) {
+    transform: translateY(-0.65em) rotate(-45deg);
+}
+
+.backdrop {
+    display: none;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .list {
+        gap: 2em;
+    }
+
+    .link {
+        font-size: 1.6em;
+    }
+}
+
+/* Mobile: Burger aktiv, Nav als Slide-In Panel */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: auto;
+        right: 0;
+        height: 100vh;
+        height: 100dvh;
+        width: 75%;
+        max-width: 320px;
+        background: rgb(63, 63, 139);
+        border-left: 0.5em solid rgb(181, 181, 246);
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.6);
+        transform: translateX(100%);
+        transition: transform 0.35s ease;
+        z-index: 150;
+        padding: 5em 2em 2em 2em;
+        display: block;
+    }
+
+    .navOpen {
+        transform: translateX(0);
+    }
+
+    .list {
+        flex-direction: column;
+        gap: 1.5em;
+        align-items: flex-start;
+    }
+
+    .link {
+        font-size: 1.8em;
+        margin: 0;
+    }
+
+    .backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 140;
+        animation: fadeIn 0.3s ease;
+    }
+}
+
+/* Kleine Mobilgeräte */
+@media (max-width: 480px) {
+    .nav {
+        width: 80%;
+    }
+
+    .link {
+        font-size: 1.5em;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
